@@ -71,3 +71,4 @@ VALUES (
   'user123',
   'USER'
 );
+`
