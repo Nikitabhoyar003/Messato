@@ -1,3 +1,0 @@
-.env
-node_modules
-JWT_SECRET=my_super_secret_key
