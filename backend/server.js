@@ -1,18 +1,24 @@
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config();
+
+const authRoutes = require("/backend/routes/auth.routes");
+// const vendorRoutes = require("/backend/routes/vendorRoutes");
+// const adminRoutes = require("/backend/routes/adminRoutes");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// test route
+app.use("/backend/api/auth", authRoutes);
+// app.use("/api/vendor", vendorRoutes);
+// app.use("/api/admin", adminRoutes);
+
 app.get("/", (req, res) => {
   res.send("Messato Backend Running");
 });
 
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(5000, () => {
+  console.log("Server running on port 5000");
 });
+
