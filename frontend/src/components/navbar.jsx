@@ -1,16 +1,9 @@
-import { Link } from "react-router-dom";
-import "../styles/navbar.css";
-
-function Navbar() {
+const Navbar = () => {
   return (
-    <div className="navbar">
-      <div className="logo">Messato 🍱</div>
-      <div>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Sign Up</Link>
-      </div>
-    </div>
+    <nav style={{ padding: "10px", background: "#494398ff", color: "#fff" }}>
+      <h3>Messato</h3>
+    </nav>
   );
-}
+};
 
 export default Navbar;

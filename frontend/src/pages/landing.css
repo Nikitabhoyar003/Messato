@@ -1,0 +1,44 @@
+.landing {
+  min-height: 100vh;
+  background: linear-gradient(to right, #f7f8f3, #ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo {
+  font-size: 52px;
+  color: #22529f;
+  font-weight: bold;
+}
+
+.tagline {
+  color: #9f9b9b;
+  margin-bottom: 40px;
+}
+
+.role-box {
+  display: flex;
+  gap: 40px;
+}
+
+.card {
+  width: 260px;
+  padding: 30px;
+  border-radius: 16px;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  margin-top: 10px;
+  color: #4f75c7;
+}
