@@ -1,0 +1,437 @@
+/* ========== LAYOUT ========== */
+
+.vendor-profile-layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: #f4f7fb;
+}
+
+/* RIGHT SIDE BRAND PANEL */
+
+.vendor-profile-right {
+  flex: 1;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: linear-gradient(
+      rgba(214, 220, 230, 0.85),
+      rgba(25, 31, 41, 0.85)
+    ),
+    url("https://res.cloudinary.com/dioka4inb/image/upload/v1771418193/Change_Your_Life__Ride_A_Bike_fp4zjz.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  color: white;
+   filter: brightness(0.98) contrast(1.05) saturate(1.05);
+}
+
+.intro-overlay h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.intro-overlay p {
+  margin: 20px 0;
+  line-height: 1.6;
+  font-size: 16px;
+  opacity: .95;
+}
+
+.intro-points span {
+  display: block;
+  margin: 10px 0;
+  font-size: 15px;
+}
+.success{
+  color:#00c853;
+  font-weight:600;
+  margin-top:5px;
+}
+/* KYC SECTION CARD */
+.kyc-section {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeIn 0.4s ease;
+}
+
+/* OPTIONAL TEXT */
+.kyc-section p {
+  font-size: 13px;
+  color: #667085;
+  margin-bottom: 4px;
+}
+
+/* INPUT STYLE */
+.kyc-section input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #e4e7ec;
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+.kyc-section input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.15);
+  outline: none;
+}
+
+/* ERROR */
+.error {
+  font-size: 12px;
+  color: #ef4444;
+  margin-top: -6px;
+}
+
+/* UPLOAD BOX ANIMATION */
+.kyc-upload-animate {
+  animation: slideDown 0.35s ease;
+}
+
+/* PAN + FSSAI spacing */
+.kyc-section .upload-wrapper {
+  margin-top: 4px;
+}
+
+/* ANIMATIONS */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* LEFT SIDE FORM */
+
+.vendor-profile-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+/* CARD */
+
+.vendor-profile-card {
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(18px);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  animation: fadeIn .4s ease;
+}
+
+/* SCROLLBAR */
+
+.vendor-profile-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.vendor-profile-card::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* STEP TITLE */
+
+.vendor-profile-card h3 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ========== INPUTS ========== */
+
+.vendor-profile-card input,
+.vendor-profile-card select,
+.vendor-profile-card textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.vendor-profile-card input:focus,
+.vendor-profile-card select:focus,
+.vendor-profile-card textarea:focus {
+  border-color: #2563eb;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+/* CHECKBOX GROUP */
+
+.vendor-profile-card label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.approved-profile-view {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.approved-badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: #22c55e;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(34,197,94,0.4);
+}
+
+
+/* ========== BUTTONS ========== */
+
+.vendor-profile-card button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.vendor-profile-card button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(37,99,235,0.35);
+}
+
+.vendor-profile-card button:last-child {
+  background: #e5e7eb;
+  color: #111;
+}
+
+/* ========== UPLOAD BOX ========== */
+
+.upload-box {
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: .3s;
+  background: #f9fafb;
+}
+
+.upload-box:hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.uploaded {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.preview-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* ========== ERROR STYLE ========== */
+
+.error {
+  background: #fff1f2;
+  color: #dc2626;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+  animation: shake .25s ease;
+}
+
+/* ========== ANIMATIONS ========== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes shake {
+  0% {transform: translateX(0);}
+  25% {transform: translateX(-3px);}
+  50% {transform: translateX(3px);}
+  75% {transform: translateX(-3px);}
+  100% {transform: translateX(0);}
+}
+
+/* ========== LIVE LOCATION BUTTON ========== */
+
+button[type="button"] {
+  background: #10b981;
+}
+
+button[type="button"]:hover {
+  box-shadow: 0 8px 18px rgba(16,185,129,0.35);
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 1024px) {
+  .vendor-profile-layout {
+    flex-direction: column;
+  }
+
+  .vendor-profile-right {
+    height: 220px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .vendor-profile-card {
+    padding: 20px;
+    max-height: unset;
+    border-radius: 0;
+  }
+
+  .intro-overlay h1 {
+    font-size: 28px;
+  }
+}
+.food-step {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 10px;
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;           /* important */
+  padding: 0;
+}
+
+/* title */
+.group-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+/* card layout */
+.card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* card base */
+.select-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+    width: 100%;
+  box-sizing: border-box;   /* 🔥 key fix */
+  margin: 0;
+}
+
+/* hover */
+.select-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* active */
+.select-card.active {
+  border: 2px solid #4f46e5;
+  background: #f5f7ff;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.15);
+}
+
+/* text */
+.select-card h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.select-card p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #666;
+}
+
+/* right tick circle */
+.radio-circle {
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: white;
+  transition: 0.25s;
+}
+
+/* active circle */
+.select-card.active .radio-circle {
+  background: #4f46e5;
+  border: none;
+}
+.capacity-input {
+  width: 100%;
+  box-sizing: border-box;   /* 🔥 key fix */
+  margin-top: 4px;
+}
+.option-group + .option-group {
+  margin-top: 6px;
+}

@@ -1,0 +1,54 @@
+/* =========================
+   LOGOUT PAGE
+========================= */
+.logout-page {
+  height: 100vh;
+  background: linear-gradient(135deg, #f4f7ff, #e9ecff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================
+   LOGOUT CARD
+========================= */
+.logout-card {
+  background: white;
+  padding: 40px 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.logout-card h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.logout-card p {
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+.logout-card span {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

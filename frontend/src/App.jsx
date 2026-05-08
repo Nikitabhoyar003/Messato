@@ -1,16 +1,18 @@
-import React from 'react'
-import { useEffect } from 'react'
-function App(){
-  useEffect(()=>{
-    fetch("http://localhost:5000/user")
-    .then(res=>res.json())
-    .then(data=>console.log(data))
-    .catch(err=>console.log(err))
-  })
-  return(
-    <div>
+import { useState } from "react";
+import Navbar from "./component/navbar/navbar";
+import Home from "./component/homepage/Home";
+import AuthModal from "./component/auth/AuthModal";
 
-    </div>
-  )
+function App() {
+  const [showAuth, setShowAuth] = useState(false);
+
+  return (
+    <>
+      <Navbar onLogin={() => setShowAuth(true)} />
+      <Home />
+      {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
+    </>
+  );
 }
-export default App
+
+export default App;

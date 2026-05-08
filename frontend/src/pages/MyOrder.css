@@ -1,0 +1,324 @@
+/* ===== GLOBAL ===== */
+.orders-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.center {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+  color: #555;
+}
+
+/* ===== EMPTY STATE ===== */
+.empty-orders {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.empty-icon {
+  font-size: 48px;
+}
+
+/* ===== ORDER CARD ===== */
+.order-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card.clickable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+/* ===== TOP ROW ===== */
+.order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-top strong {
+  color: #222;
+}
+
+/* ===== STATUS BADGES ===== */
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background: #fff4e5;
+  color: #d9822b;
+}
+
+.status.accepted {
+  background: #e8f1ff;
+  color: #2563eb;
+}
+
+.status.preparing {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.status.out {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.status.delivered {
+  background: #e6f7ee;
+  color: #15803d;
+}
+
+.status.cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ===== TEXT ===== */
+.date {
+  font-size: 13px;
+  color: #777;
+  margin: 6px 0;
+}
+
+.vendor {
+  font-weight: 500;
+  margin: 6px 0 10px;
+  color: #333;
+}
+
+/* ===== ITEMS ===== */
+.order-items-list {
+  padding-left: 18px;
+  margin-bottom: 12px;
+}
+
+.order-items-list li {
+  font-size: 14px;
+  color: #444;
+}
+
+.muted {
+  font-size: 13px;
+  color: #999;
+}
+
+/* ===== FOOTER ===== */
+.order-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.amount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ===== INFO TEXT ===== */
+.info {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== SUCCESS & DANGER ===== */
+.success {
+  font-size: 14px;
+  color: #15803d;
+  font-weight: 600;
+}
+
+.danger {
+  font-size: 14px;
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Pay Now Button */
+.pay-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.pay-btn:hover {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  transform: translateY(-1px);
+}
+
+/* Cancel Button */
+.cancel-btn {
+  background: #f1f5f9;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background: #e2e8f0;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .order-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .pay-btn,
+  .cancel-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.order-food-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+/* Order card body */
+.order-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+/* Food image */
+.order-food-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 14px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Right side content */
+.order-content {
+  flex: 1;
+}
+
+/* Items list spacing */
+.order-items-list {
+  margin: 8px 0;
+  padding-left: 16px;
+}
+
+/* Amount bold */
+.amount {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Order bottom spacing */
+.order-bottom {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+/* STATUS INFO TEXT */
+.info {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  /* color: #92a0e4; /* warm food prep color */
+  /* background: #fff7e6; */ 
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+/* ACTION WRAPPER */
+.action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2e7d32; /* delivery green */
+}
+
+/* TRACK BUTTON */
+.track-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 8px rgba(57, 92, 234, 0.082);
+}
+
+/* HOVER EFFECT */
+.track-btn:hover {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(57, 92, 234, 0.082);
+}
+
+/* CLICK EFFECT */
+.track-btn:active {
+  transform: scale(0.96);
+}
+
+/* MOBILE FRIENDLY */
+@media (max-width: 600px) {
+  .action {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .track-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

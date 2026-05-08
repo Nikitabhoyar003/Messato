@@ -1,0 +1,236 @@
+.landing {
+  min-height: 100vh;
+  background: linear-gradient(to right, #f7f8f3, #ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.video-hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+.hero-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.hero-content h2 {
+  margin-top: 10px;
+  font-size: 32px;
+}
+
+.hero-content p {
+  margin: 18px 0 35px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  font-size: 14px;
+  opacity: 0.8;
+  text-align: center;
+}
+.logo {
+  font-size: 52px;
+  color: #5c76eb;
+  font-weight: bold;
+}
+
+.tagline {
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.role-box {
+  display: flex;
+  gap: 40px;
+}
+
+.card {
+background: white;
+  border-radius: 22px;
+  padding: 40px 30px;
+  width: 360px;
+  text-align: center;
+  cursor: pointer;
+
+  border: 2px solid transparent;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.35s ease;
+}
+.card:active {
+  transform: scale(0.98);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+ transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+  border-color: #4c39ef;
+}
+
+.card h3 {
+  margin-top: 10px;
+  color: #2f4f2f;
+}
+.card i,
+.card span,
+.card svg {
+  font-size: 34px;
+  display: inline-block;
+  margin-bottom: 15px;
+  transition: transform 0.35s ease;
+}
+
+.card:hover i,
+.card:hover span,
+.card:hover svg {
+  transform: scale(1.2) rotate(-5deg);
+}
+.card p{margin-top: 8px;
+  font-size: 15px;
+  color: #555;}
+ 
+  /* HOW IT WORKS SECTION */
+.how-it-works {
+  padding: 80px 20px;
+  background: #fffaf5;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #2d2d2d;
+  font-weight: 700;
+}
+
+/* Steps Container */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Individual Step Card */
+.step-card {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+/* Hover Effect */
+.step-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 45px rgba(255, 165, 0, 0.25);
+}
+
+/* Icon */
+.step-icon {
+  font-size: 2.8rem;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+/* Title */
+.step-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Description */
+.step-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Accent Border on Hover */
+.step-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #ff9800, #ff5722);
+  border-radius: 0 0 18px 18px;
+  transition: width 0.35s ease;
+}
+
+.step-card:hover::after {
+  width: 100%;
+}
+.about-mission{
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  border-left: 4px solid #6952eb;
+  padding-left: 15px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .how-it-works h2 {
+    font-size: 2rem;
+  }
+
+  .step-card {
+    padding: 25px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content h2 {
+    font-size: 24px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}

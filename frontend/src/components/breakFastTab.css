@@ -1,0 +1,338 @@
+/* ═══════════════════════════════════════════════════════════
+   tabs.css  —  One file for BreakfastTab, LunchTab, DinnerTab
+═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,700;1,500&display=swap');
+
+/* ── TOKENS ── */
+:root {
+  --t-font:   'DM Sans', sans-serif;
+  --t-serif:  'Fraunces', serif;
+  --t-white:  #ffffff;
+  --t-bg:     #f4f8ff;
+  --t-text:   #0b1623;
+  --t-mid:    #4a6080;
+  --t-muted:  #93aec8;
+  --t-b50:    #eef5ff;
+  --t-b100:   #d9eaff;
+  --t-b200:   #b6d4ff;
+  --t-b600:   #1a65cc;
+  --t-radius: 22px;
+}
+
+/* ─────────────────────────
+   PAGE SHELL
+───────────────────────── */
+.tab-page {
+  font-family: var(--t-font);
+  background: var(--t-bg);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* ─────────────────────────
+   HERO  (shared structure)
+───────────────────────── */
+.tab-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 50px 28px 58px;
+  border-radius: 0 0 38px 38px;
+  isolation: isolate;
+}
+
+/* ── Breakfast hero — golden sunrise ── */
+.tab-hero--breakfast {
+  background: linear-gradient(140deg, #e65c00 0%, #f9a825 55%, #ffd54f 100%);
+}
+
+/* ── Lunch hero — clear sky blue ── */
+.tab-hero--lunch {
+  background: linear-gradient(140deg, #0d47a1 0%, #1976d2 50%, #42a5f5 100%);
+}
+
+/* ── Dinner hero — midnight navy ── */
+.tab-hero--dinner {
+  background: linear-gradient(140deg, #0a0e2e 0%, #111d5e 50%, #1a3080 100%);
+}
+
+/* Glowing background orbs */
+.tab-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(65px);
+  pointer-events: none;
+  z-index: 0;
+  animation: orb-drift 8s ease-in-out infinite alternate;
+}
+.tab-orb-1 { width: 320px; height: 320px; top: -90px; left: -70px; animation-delay: 0s; }
+.tab-orb-2 { width: 220px; height: 220px; bottom: -50px; right: -40px; animation-delay: 3s; }
+.tab-orb-3 { width: 150px; height: 150px; top: 20px; right: 20%; animation-delay: 1.5s; }
+
+.tab-hero--breakfast .tab-orb-1 { background: #ffcc80; opacity: 0.45; }
+.tab-hero--breakfast .tab-orb-2 { background: #fff9c4; opacity: 0.35; }
+.tab-hero--breakfast .tab-orb-3 { background: #ffb74d; opacity: 0.30; }
+
+.tab-hero--lunch .tab-orb-1 { background: #90caf9; opacity: 0.38; }
+.tab-hero--lunch .tab-orb-2 { background: #e3f2fd; opacity: 0.30; }
+.tab-hero--lunch .tab-orb-3 { background: #bbdefb; opacity: 0.28; }
+
+.tab-hero--dinner .tab-orb-1 { background: #5c6bc0; opacity: 0.22; }
+.tab-hero--dinner .tab-orb-2 { background: #9fa8da; opacity: 0.16; }
+.tab-hero--dinner .tab-orb-3 { background: #c5cae9; opacity: 0.12; }
+
+@keyframes orb-drift {
+  from { transform: scale(1) translate(0, 0); }
+  to   { transform: scale(1.12) translate(8px, -18px); }
+}
+
+/* Hero text */
+.tab-hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.tab-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.30);
+  backdrop-filter: blur(8px);
+  margin-bottom: 14px;
+  color: rgba(255,255,255,0.92);
+}
+
+.tab-hero-title {
+  font-family: var(--t-serif);
+  font-size: clamp(26px, 5.5vw, 40px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 10px;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
+}
+
+.tab-hero-sub {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+/* Floating food decorations */
+.tab-floaters {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.tab-floaters span {
+  position: absolute;
+  font-size: 26px;
+  left: var(--fx);
+  top: var(--fy);
+  opacity: 0.16;
+  animation: float-bob 5s ease-in-out var(--fd, 0s) infinite alternate;
+}
+@keyframes float-bob {
+  from { transform: translateY(0) rotate(-5deg); }
+  to   { transform: translateY(-12px) rotate(5deg); }
+}
+
+/* Live time pill — bottom right of hero */
+.tab-hero-time {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.13);
+  border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 6px 14px;
+  letter-spacing: 0.2px;
+}
+.tab-hero-time-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74,222,128,0.28);
+  animation: live-blink 2s ease-in-out infinite;
+}
+@keyframes live-blink {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+/* ─────────────────────────
+   SCOPE TOGGLE
+───────────────────────── */
+.tab-scope {
+  display: flex;
+  justify-content: center;
+  padding: 24px 20px 0;
+}
+.tab-scope-track {
+  display: inline-flex;
+  gap: 4px;
+  background: var(--t-white);
+  border: 1.5px solid var(--t-b100);
+  border-radius: 50px;
+  padding: 4px;
+  box-shadow: 0 2px 14px rgba(26,101,204,0.08);
+}
+.tab-scope-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--t-font);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--t-mid);
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.tab-scope-btn:hover {
+  background: var(--t-b50);
+  color: var(--t-b600);
+}
+/* per-tab active colours */
+.tab-page--breakfast .tab-scope-btn.active {
+  background: linear-gradient(135deg, #e65c00, #f9a825);
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(230,92,0,0.28);
+}
+.tab-page--lunch .tab-scope-btn.active {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(26,101,204,0.28);
+}
+.tab-page--dinner .tab-scope-btn.active {
+  background: linear-gradient(135deg, #0a0e2e, #1a3080);
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(26,48,128,0.32);
+}
+
+/* ─────────────────────────
+   FILTER + COUNT
+───────────────────────── */
+.tab-filter { padding: 16px 20px 0; }
+
+.tab-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--t-mid);
+}
+.tab-count-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34,197,94,0.18);
+  animation: pulse-live 1.8s ease-in-out infinite;
+}
+@keyframes pulse-live {
+  0%,100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.18); }
+  50%      { box-shadow: 0 0 0 7px rgba(34,197,94,0.05); }
+}
+
+/* ─────────────────────────
+   CARD GRID
+───────────────────────── */
+.tab-body { padding: 18px 20px 0; }
+
+.tab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+  gap: 20px;
+}
+.tab-card-anim {
+  animation: card-up 0.40s cubic-bezier(0.22,1,0.36,1) both;
+  animation-delay: calc(var(--ci) * 0.06s);
+}
+@keyframes card-up {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─────────────────────────
+   SKELETON
+───────────────────────── */
+.tab-skeletons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+  gap: 20px;
+}
+.tab-skeleton {
+  height: 340px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #e2edf8 25%, #cfe0f4 50%, #e2edf8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  animation-delay: calc(var(--si) * 0.1s);
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─────────────────────────
+   EMPTY STATE
+───────────────────────── */
+.tab-empty {
+  text-align: center;
+  padding: 80px 24px;
+  animation: card-up 0.4s ease both;
+}
+.tab-empty-icon { font-size: 58px; display: block; margin-bottom: 16px; opacity: 0.4; }
+.tab-empty h3 {
+  font-family: var(--t-serif);
+  font-size: 21px;
+  color: var(--t-text);
+  margin: 0 0 8px;
+}
+.tab-empty p {
+  font-size: 13.5px;
+  color: var(--t-muted);
+  margin: 0;
+  line-height: 1.65;
+  max-width: 280px;
+  margin-inline: auto;
+}
+
+/* ─────────────────────────
+   RESPONSIVE
+───────────────────────── */
+@media (max-width: 520px) {
+  .tab-hero { padding: 38px 18px 48px; border-radius: 0 0 28px 28px; }
+  .tab-scope-btn { padding: 7px 14px; font-size: 12px; }
+  .tab-grid { grid-template-columns: 1fr 1fr; gap: 13px; }
+  .tab-body { padding: 13px 13px 0; }
+  .tab-hero-time { display: none; }
+}
+@media (max-width: 370px) {
+  .tab-grid { grid-template-columns: 1fr; }
+}

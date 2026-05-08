@@ -1,0 +1,209 @@
+/* PAGE BASE */
+
+.page-with-navbar {
+  min-height: 100vh;
+  background: #f6f7fb;
+  padding-top: 90px; /* prevents navbar overlap */
+}
+
+/* CONTAINER */
+
+.order-details-container {
+  max-width: 820px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* COMMON CARD */
+
+.summary-card,
+.bill-card1,
+.details-card1,
+.help-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* HEADINGS */
+
+.summary-card h3,
+.bill-card1 h3,
+.details-card1 h3,
+.help-card h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ARRIVAL TEXT */
+
+.arrival {
+  color: #16a34a;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* INVOICE LINK */
+
+.invoice {
+  display: inline-block;
+  color: #16a34a;
+  font-weight: 500;
+  margin-bottom: 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ITEM COUNT */
+
+.item-count {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* ITEM ROW */
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+/* ITEM IMAGE */
+
+.summary-item img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 12px;
+}
+
+/* ITEM INFO */
+
+.summary-item h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.summary-item p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* PRICE RIGHT */
+
+.summary-item span {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* BILL ROW */
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+/* TOTAL */
+
+.bill-row.total {
+  border-top: 1px dashed #ddd;
+  padding-top: 12px;
+  font-size: 17px;
+  color: #1d4ed8;
+}
+
+/* ORDER DETAILS TEXT */
+
+.details-card1 p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+/* REORDER BUTTON */
+
+.reorder-btn {
+  width: 100%;
+  background: linear-gradient(to right, #2563eb, #1d4ed8);;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 18px;
+}
+
+.reorder-btn:hover {
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+}
+
+/* HELP CARD */
+
+.help-card {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.help-card:hover {
+  background: #f9fafb;
+}
+
+.chat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+/* BACK BUTTON */
+
+.back-btn {
+  width: 100%;
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  opacity: 0.95;
+}
+
+/* CENTER TEXT */
+
+.center {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+  .order-details-container {
+    padding: 14px;
+  }
+
+  .summary-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .reorder-btn {
+    font-size: 15px;
+  }
+}

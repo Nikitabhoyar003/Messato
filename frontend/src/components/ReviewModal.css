@@ -1,0 +1,164 @@
+/* ================= OVERLAY ================= */
+.review-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  animation: fadeIn 0.35s ease;
+}
+
+/* ================= MODAL CARD ================= */
+.review-modal {
+  width: 92%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  padding: 32px 26px 24px;
+  text-align: center;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  transform: translateY(30px) scale(0.95);
+  opacity: 0;
+  animation: modalPop 0.45s cubic-bezier(.21,1.02,.73,1) forwards;
+}
+
+/* ================= TITLE ================= */
+.review-modal h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+/* ================= STARS ================= */
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stars span {
+  font-size: 34px;
+  cursor: pointer;
+  color: #cbd5e1;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.stars span:hover {
+  transform: scale(1.25);
+  color: #facc15;
+}
+
+/* active star */
+.stars span.active,
+.stars span:hover,
+.stars span:hover ~ span {
+  color: #facc15;
+}
+.stars span.active {
+  color: #facc15;
+  transform: scale(1.15);
+}
+/* ================= TEXTAREA ================= */
+.review-modal textarea {
+  width: 100%;
+  min-height: 90px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  padding: 12px 14px;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+  transition: 0.25s;
+  margin-bottom: 22px;
+  background: rgba(255,255,255,0.85);
+}
+
+.review-modal textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+/* ================= BUTTON ROW ================= */
+.review-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* SKIP BUTTON */
+.review-actions button:first-child {
+  flex: 1;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.review-actions button:first-child:hover {
+  background: #e2e8f0;
+}
+
+/* SUBMIT BUTTON */
+.review-actions button:last-child {
+  flex: 1;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+
+  transition: 0.25s;
+}
+
+.review-actions button:last-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.45);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalPop {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px) {
+  .review-modal {
+    padding: 26px 18px 20px;
+  }
+
+  .stars span {
+    font-size: 28px;
+  }
+
+  .review-modal h3 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,200 @@
+/* ===============================
+   NAVBAR HEIGHT
+================================= */
+:root {
+  --navbar-height: 93px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 160px;
+  }
+}
+
+/* ===============================
+   BODY OFFSET
+================================= */
+.user-dashboard-body {
+  padding-top: var(--navbar-height);
+  overflow-x: hidden;
+}
+
+/* ===============================
+   MAIN CONTAINER (USED IN JSX)
+================================= */
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
+  padding-left: clamp(16px, 4vw, 60px);
+  padding-right: clamp(16px, 4vw, 60px);
+}
+
+/* 🔥 allow more width on large screens */
+@media (min-width: 1800px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 2400px) {
+  .container {
+    max-width: 92%;
+  }
+} 
+
+/* ===============================
+   DASHBOARD CONTENT SPACING
+================================= */
+.userdashboard-content {
+  padding-top: 24px;
+  padding-bottom: 40px;
+}
+
+.userdashboard-content section {
+  margin-bottom: 40px;
+}
+
+/* ===============================
+   INSPIRATION CAROUSEL
+================================= */
+.inspiration-carousel {
+  margin: 20px 0 30px;
+}
+
+/* ===============================
+   MEAL TAB (STICKY + CENTERED)
+================================= */
+.meal-tab {
+  position: sticky;
+  top: var(--navbar-height);
+  z-index: 999;
+
+  background: #f3f5f9;
+  border-bottom: 1px solid #e2e6ef;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 14px 16px;
+}
+
+/* inner wrapper inside MealTab component */
+.meal-tab-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 6vw, 80px);
+  width: max-content;
+}
+
+/* ===============================
+   TAB ITEM
+================================= */
+.meal-item {
+  position: relative;
+  font-size: clamp(14px, 1.1vw, 17px);
+  font-weight: 500;
+  color: #5f6b85;
+  cursor: pointer;
+  padding-bottom: 8px;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.meal-item:hover {
+  color: #2f6fed;
+}
+
+.meal-item.active {
+  color: #2f6fed;
+  font-weight: 600;
+}
+
+.meal-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #2f6fed;
+  border-radius: 3px;
+}
+
+/* ===============================
+   MOBILE TAB SCROLL
+================================= */
+@media (max-width: 768px) {
+  .meal-tab {
+    overflow-x: auto;
+  }
+
+  .meal-tab::-webkit-scrollbar {
+    display: none;
+  }
+
+  .meal-tab-inner {
+    margin: auto;
+  }
+}
+
+/* ===============================
+   FADE ANIMATION
+================================= */
+.user-fade-in {
+  animation: fadeUp 0.5s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   TABLET
+================================= */
+@media (max-width: 1024px) {
+  .userdashboard-content {
+    padding-top: 20px;
+  }
+
+  .userdashboard-content section {
+    margin-bottom: 32px;
+  }
+}
+
+/* ===============================
+   MOBILE
+================================= */
+@media (max-width: 768px) {
+  .userdashboard-content {
+    padding-top: 18px;
+    padding-bottom: 30px;
+  }
+
+  .userdashboard-content section {
+    margin-bottom: 26px;
+  }
+}
+
+/* ===============================
+   SMALL MOBILE
+================================= */
+@media (max-width: 480px) {
+  .userdashboard-content {
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+
+  .userdashboard-content section {
+    margin-bottom: 22px;
+  }
+}

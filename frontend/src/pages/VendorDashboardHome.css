@@ -1,0 +1,146 @@
+/* =========================
+   RESET FORCE
+========================= */
+.vendor-dashboard-home * {
+  box-sizing: border-box;
+}
+
+/* =========================
+   COLOR SYSTEM (FORCED)
+========================= */
+.vendor-dashboard-home {
+  --bg: #E6E8EF;
+  --card: #ffffff;
+
+  --blue: #6C7CFF;
+  --purple: #B794F4;
+  --green: #6EE7B7;
+  --cyan: #7DD3FC;
+  --pink: #FBCFE8;
+
+  --text-main: #0F172A;
+  --text-soft: #6B7280;
+}
+
+/* =========================
+   PAGE BASE
+========================= */
+.vendor-dashboard-home {
+  min-height: 100vh;
+  background: var(--bg) !important;
+  padding: 32px;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+.dashboard-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.dashboard-header p {
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+/* =========================
+   KPI CARDS
+========================= */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin: 28px 0;
+}
+
+.kpi-card {
+  background: var(--card) !important;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.kpi-card span {
+  color: var(--text-soft);
+  font-size: 14px;
+}
+
+.kpi-card h3 {
+  margin-top: 12px;
+  font-size: 32px;
+  color: var(--text-main);
+}
+
+/* REVENUE CARD */
+.kpi-card.highlight {
+  background: linear-gradient(135deg, #6C7CFF, #8B5CF6) !important;
+}
+
+.kpi-card.highlight span,
+.kpi-card.highlight h3 {
+  color: #ffffff !important;
+}
+
+/* =========================
+   CHARTS
+========================= */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+.chart-card {
+  background: var(--card) !important;
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.chart-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* =========================
+   NO DATA
+========================= */
+.nodata {
+  text-align: center;
+  color: var(--text-soft);
+  padding: 100px 0;
+}
+
+/* =========================
+   REVIEWS
+========================= */
+.reviews-card {
+  margin-top: 28px;
+  background: var(--card) !important;
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}

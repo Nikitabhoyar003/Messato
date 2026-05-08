@@ -1,0 +1,109 @@
+/* ================= MEAL NAVBAR ================= */
+.meal-navbar {
+ position: sticky;
+  /* top: var(--navbar-height); */
+  top:0;
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;        /* 🔥 center tabs */
+  align-items: center;
+
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  gap:200px ;
+  padding: 14px 16px;
+
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.meal-navbar::-webkit-scrollbar {
+  display: none;           /* Chrome */
+}
+.meal-navbar > * {
+  flex-shrink: 0;
+}
+/* ================= TAB ITEM ================= */
+.meal-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 500;
+  color: #64748b;
+
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 8px;
+
+  transition: 0.25s ease;
+}
+
+/* spacing between tabs */
+.meal-item:not(:last-child) {
+  margin-right: clamp(24px, 6vw, 80px);
+}
+
+/* ICON */
+.meal-item svg {
+  font-size: 16px;
+}
+
+/* HOVER */
+.meal-item:hover {
+  color: #2563eb;
+}
+
+/* ACTIVE */
+.meal-item.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* ACTIVE UNDERLINE */
+.meal-item.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 10px;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+  .meal-item:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+
+  .meal-navbar {
+    justify-content: flex-start; 
+    gap:10px;
+    padding-top: 30px;  /* allow scroll */
+  }
+
+  .meal-item {
+    font-size: 13px;
+  }
+
+  .meal-item:not(:last-child) {
+    margin-right: 28px;
+  }
+
+  .meal-item.active::after {
+    display: none; /* cleaner mobile UI */
+  }
+}
+
+
+

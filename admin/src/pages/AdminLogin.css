@@ -1,0 +1,180 @@
+/* ===== GLOBAL ===== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.auth-wrapper{
+  width:100%;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background: linear-gradient(120deg,#e7edf6,#b6c7e7);
+  padding:20px;
+}
+
+/* ===== CARD ===== */
+
+.auth-card{
+  width:100%;
+  max-width:950px;
+  min-height:520px;
+
+  display:flex;
+  border-radius:20px;
+  overflow:hidden;
+
+  background:white;
+  box-shadow:0 20px 60px rgba(0,0,0,0.15);
+}
+
+/* ===== LEFT SIDE ===== */
+
+.auth-left{
+  flex:1;
+  padding:60px 50px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.auth-left h2{
+  font-size:28px;
+  margin-bottom:30px;
+  font-weight:600;
+  color:#333;
+}
+
+/* ===== INPUT ===== */
+
+.auth-left input{
+  width:100%;
+  padding:14px;
+  margin-bottom:16px;
+
+  border-radius:8px;
+  border:1px solid #ddd;
+
+  font-size:14px;
+  outline:none;
+
+  transition:0.3s;
+}
+
+.auth-left input:focus{
+  border-color:#2d6cdf;
+  box-shadow:0 0 0 2px rgba(45,108,223,0.1);
+}
+
+/* ===== BUTTON ===== */
+
+.auth-left button{
+  width:100%;
+  padding:14px;
+
+  background:#2d6cdf;
+  border:none;
+  color:white;
+
+  font-size:16px;
+  font-weight:600;
+
+  border-radius:8px;
+  cursor:pointer;
+
+  margin-top:10px;
+
+  transition:0.3s;
+}
+
+.auth-left button:hover{
+  background:#1f53b8;
+}
+
+/* ===== LINKS ===== */
+
+.auth-link{
+  margin-top:20px;
+  font-size:14px;
+}
+
+.auth-link a{
+  color:#2d6cdf;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.auth-left p{
+  margin-top:10px;
+  font-size:14px;
+}
+
+.auth-left p a{
+  color:#2d6cdf;
+  text-decoration:none;
+}
+
+/* ===== RIGHT SIDE ===== */
+
+.auth-right{
+  flex:1;
+
+  background:linear-gradient(135deg,#4e73df,#6f8ff7);
+  color:white;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+  padding:40px;
+}
+
+.auth-right h1{
+  font-size:40px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.auth-right p{
+  font-size:18px;
+  opacity:0.9;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width:900px){
+
+  .auth-card{
+    flex-direction:column;
+    max-width:500px;
+  }
+
+  .auth-right{
+    order:-1;
+    padding:40px 20px;
+  }
+
+  .auth-right h1{
+    font-size:32px;
+  }
+
+}
+
+@media (max-width:500px){
+
+  .auth-left{
+    padding:40px 25px;
+  }
+
+  .auth-left h2{
+    font-size:24px;
+  }
+
+}

@@ -1,0 +1,155 @@
+/* =========================
+   MAIN DASHBOARD LAYOUT
+========================= */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f7ff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================
+   TIFFIN DASHBOARD CONTENT
+========================= */
+.tiffin-dashboard {
+  flex: 1;
+  padding: 30px 40px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.header button {
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(135deg, #4f6df5, #4f6df5);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(45, 45, 190, 0.35);
+  transition: 0.3s ease;
+}
+
+.header button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(29, 22, 155, 0.55);
+}
+
+/* =========================
+   MENU LIST GRID
+========================= */
+.menu-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* =========================
+   MENU CARD (TiffinCard)
+========================= */
+.menu-card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 25px#4f6df5(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+.menu-card h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.menu-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.menu-card .price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #4f6df5;
+  margin: 12px 0;
+}
+
+/* =========================
+   ORDER BUTTON
+========================= */
+.menu-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background: #4f6df5;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-card button:hover {
+  background: #4f6df5;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+.menu-list p {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* =========================
+   FILTER MODAL BACKDROP
+========================= */
+.filter-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 999;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .tiffin-dashboard {
+    padding: 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .header h2 {
+    font-size: 1.5rem;
+  }
+}

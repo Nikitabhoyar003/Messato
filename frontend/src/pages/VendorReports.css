@@ -1,0 +1,132 @@
+.reports-page {
+  padding: 24px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.reports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reports-header h2 {
+  margin: 0;
+}
+
+.reports-header p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* DATE FILTER */
+.date-filter {
+  display: flex;
+  gap: 10px;
+}
+
+.date-filter input {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.date-filter button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* STATS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.stat-card {
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.stat-card p {
+  font-size: 14px;
+  color: #c7d2fe;
+}
+
+
+/* jvbdnmvmnvmdnv,mn */
+.stat-card h3 {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+/* TABLES */
+.table-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.table-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.table-card.full {
+  margin-top: 20px;
+}
+
+.table-card h4 {
+  margin-bottom: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* STATUS */
+.pending { color: #d97706; }
+.completed { color: #16a34a; }
+.cancelled { color: #dc2626; }
+
+/* BADGES */
+.badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge.red {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.badge.green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.badge.gray {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/*  */

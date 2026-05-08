@@ -1,0 +1,519 @@
+/* ================= ROOT ================= */
+.admin-subscription {
+  padding: 24px;
+  font-family: "Inter", system-ui, sans-serif;
+  background: #f4f6fb;
+  min-height: 100vh;
+}
+
+.admin-subscription h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.admin-subscription h2 {
+  margin: 30px 0 12px;
+  color: #111827;
+  font-size: 20px;
+}
+
+/* ================= FORMS ================= */
+.plan-form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  animation: fadeUp 0.4s ease;
+}
+
+.plan-form input,
+.plan-form select,
+.plan-form textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.plan-form textarea {
+  grid-column: 1 / -1;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.plan-form input:focus,
+.plan-form select:focus,
+.plan-form textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.plan-form button {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.plan-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.35);
+}
+
+/* ================= TABLE ================= */
+.plans-table {
+  width: 100%;
+  margin-top: 16px;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.plans-table thead {
+  background: #eef2ff;
+}
+
+.plans-table th,
+.plans-table td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.plans-table th {
+  color: #4338ca;
+  font-weight: 600;
+}
+
+.plans-table tbody tr {
+  border-top: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.plans-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.plans-table td {
+  color: #374151;
+}
+
+/* ================= STATUS ================= */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.action-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.edit-btn {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.edit-btn:hover {
+  background: #c7d2fe;
+}
+
+.delete-btn {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.delete-btn:hover {
+  background: #fecaca;
+}
+
+/* ================= MODAL ================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal-box {
+  background: #ffffff;
+  padding: 22px;
+  width: 95%;
+  max-width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  animation: scaleIn 0.3s ease;
+}
+
+.modal-box h2 {
+  margin-bottom: 12px;
+}
+
+.modal-box input,
+.modal-box textarea,
+.modal-box select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background: #4f46e5;
+  color: #fff;
+}
+
+.modal-actions .cancel {
+  background: #e5e7eb;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .plans-table thead {
+    display: none;
+  }
+
+  .plans-table,
+  .plans-table tbody,
+  .plans-table tr,
+  .plans-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .plans-table tr {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    padding: 10px;
+  }
+
+  .plans-table td {
+    padding: 6px 0;
+    font-size: 13px;
+  }
+
+  .action-cell {
+    margin-top: 8px;
+  }
+}
+
+
+/* ===== PRIMARY ADMIN BUTTON (Create / Assign) ===== */
+.plan-form button {
+  grid-column: auto;
+  background: #2563eb; /* 🔵 same as Subscriptions blue */
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px; /* 👈 SMALL BUTTON */
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  transition: 0.25s ease;
+}
+
+/* hover */
+.plan-form button:hover {
+  background: #1d4ed8;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+
+/* active */
+.plan-form button:active {
+  transform: scale(0.97);
+}
+
+.plan-form {
+  align-items: end;
+}
+
+/* ===== ICON BUTTON ===== */
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #2563eb; /* Subscriptions blue */
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px; /* 👈 SMALL */
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  transition: 0.25s ease;
+}
+
+/* icon size */
+.primary-btn .btn-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* hover */
+.primary-btn:hover {
+  background: #1d4ed8;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+
+/* active */
+.primary-btn:active {
+  transform: scale(0.97);
+}
+
+
+
+
+
+.form-section {
+  grid-column: 1 / -1;
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px dashed #e5e7eb;
+}
+
+.form-section h4 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #374151;
+}
+
+
+/* ================= ROOT ================= */
+.admin-subscription {
+  padding: 24px;
+  background: #f5f7fb;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.admin-subscription h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #0f172a;
+}
+
+.admin-subscription h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #1e293b;
+}
+
+/* ================= FORM CARD ================= */
+.plan-form {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+
+/* ================= INPUTS ================= */
+.plan-form input,
+.plan-form select {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.plan-form input::placeholder {
+  color: #94a3b8;
+}
+
+.plan-form input:focus,
+.plan-form select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* ================= FEATURE TITLE ================= */
+.plan-form h3 {
+  grid-column: 1 / -1;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 6px 0 2px;
+  color: #334155;
+}
+
+/* ================= BUTTON ================= */
+.primary-btn {
+  height: 44px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+}
+
+.primary-btn svg {
+  stroke-width: 2.2;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+  .plan-form {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .plan-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-form {
+    grid-template-columns: 1fr;
+  }
+
+  .primary-btn {
+    grid-column: 1 / -1;
+  }
+}
+
+
+
+
+/* ================= FEATURE FIELD WITH ICON ================= */
+.feature-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-field svg {
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.feature-field select {
+  flex: 1;
+}
+

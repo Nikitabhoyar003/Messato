@@ -1,0 +1,74 @@
+.page-wrapper {
+  padding: 25px;
+  background: linear-gradient(135deg, #ecfeff, #ffffff);
+  min-height: 100vh;
+}
+
+.page-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.page-header p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* ===== GRID ===== */
+.page-grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* ===== CARD ===== */
+.card-box {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* ===== TABLE ===== */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.table th {
+  background: #f9fafb;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 14px;
+  text-align: left;
+}
+
+.table td {
+  padding: 14px;
+  font-size: 13px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== STATUS ===== */
+.status.success { color: #16a34a; font-weight: 600; }
+.status.pending { color: #f97316; font-weight: 600; }
+.status.failed  { color: #dc2626; font-weight: 600; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 15px;
+  }
+
+  .page-header h2 {
+    font-size: 20px;
+  }
+}

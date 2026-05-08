@@ -1,0 +1,700 @@
+
+
+
+
+/* =================
+
+/* =========================
+   🎨 DESIGN TOKENS
+========================= */
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --border: #e6e9ef;
+  --text: #0f172a;
+  --muted: #64748b;
+
+  --blue: #2563eb;
+  --blue-soft: #e0e7ff;
+
+  --green: #22c55e;
+  --green-soft: #dcfce7;
+
+  --orange: #f59e0b;
+  --orange-soft: #fef3c7;
+
+  --purple: #7c3aed;
+  --purple-soft: #ede9fe;
+
+  --red: #ef4444;
+  --red-soft: #fee2e2;
+}
+
+/* =========================
+   📦 PAGE LAYOUT (UNCHANGED)
+========================= */
+.admin-orders {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 32px;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* =========================
+   🧾 HEADER (LEFT ALIGNED)
+========================= */
+.orders-header {
+  margin-bottom: 24px;
+}
+
+.orders-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* =========================
+   🔍 CONTROLS (NORMAL FLOW)
+========================= */
+.orders-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+/* SEARCH */
+.search {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #f8fafc;
+  font-size: 14px;
+}
+
+.search:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--blue);
+}
+
+/* =========================
+   🎯 STATUS DROPDOWN (NO CENTER SHIFT)
+========================= */
+.status-filter {
+  position: relative;
+}
+
+.status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.status-pill span {
+  color: var(--muted);
+}
+
+.status-pill b {
+  text-transform: capitalize;
+}
+
+.status-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* POPOVER */
+.status-popover {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0; /* 🔴 IMPORTANT: keep aligned, not centered */
+
+  width: 220px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 8px;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+/* OPTION */
+.status-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.status-option:hover {
+  background: #f1f5f9;
+}
+
+.status-option.active {
+  background: var(--blue);
+  color: #ffffff;
+}
+
+/* =========================
+   📊 TABLE CARD (SAME POSITION)
+========================= */
+.table-card {
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* =========================
+   📋 TABLE (CENTER CONTENT ONLY)
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* HEAD */
+thead {
+  background: #f8fafc;
+}
+
+th {
+  padding: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+
+  /* ✅ CENTER HEADER TEXT */
+  text-align: center;
+}
+
+/* BODY */
+td {
+  padding: 18px;
+  font-size: 14px;
+  color: var(--text);
+
+  /* ✅ CENTER ONLY TABLE DATA */
+  text-align: center;
+  vertical-align: middle;
+}
+
+tbody tr {
+  border-top: 1px solid var(--border);
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* =========================
+   👤 USER CELL
+========================= */
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =========================
+   🟢 STATUS BADGES
+========================= */
+.status {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 110px;
+}
+
+.status.Pending {
+  background: var(--orange-soft);
+  color: #92400e;
+}
+
+.status.Accepted {
+  background: var(--blue-soft);
+  color: #1e3a8a;
+}
+
+.status.Preparing {
+  background: var(--purple-soft);
+  color: var(--purple);
+}
+
+.status.Delivered {
+  background: var(--green-soft);
+  color: #166534;
+}
+
+.status.Cancelled {
+  background: var(--red-soft);
+  color: #991b1b;
+}
+
+/* =========================
+   🎯 ACTION BUTTONS
+========================= */
+.action-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-cell button {
+  padding: 8px 16px;
+  border-radius: 14px;
+  border: none;
+
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================
+   📭 EMPTY STATE
+========================= */
+.empty {
+  padding: 40px;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+
+/* =========================
+   🔢 PAGINATION
+========================= */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+  padding: 14px 16px;
+
+  border-top: 1px solid var(--border);
+  background: #fafafa;
+}
+
+/* PAGE TEXT */
+.pagination span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* BUTTONS */
+.pagination button {
+  padding: 8px 16px;
+  border-radius: 10px;
+
+  border: 1px solid var(--border);
+  background: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* HOVER */
+.pagination button:hover:not(:disabled) {
+  background: var(--blue);
+  color: #ffffff;
+  border-color: var(--blue);
+  transform: translateY(-1px);
+}
+
+/* DISABLED */
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ==============================
+   PAGE LAYOUT
+============================== */
+
+.vendor-orders-page {
+  padding: 30px;
+  background: #f4f6fb;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.vendor-orders-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* ==============================
+   TABLE
+============================== */
+
+.orders-table-wrapper {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow-x: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.orders-table thead {
+  background: #f9fafb;
+}
+
+.orders-table th {
+  padding: 14px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.orders-table td {
+  padding: 14px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #374151;
+}
+
+.orders-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* ==============================
+   STATUS BADGES
+============================== */
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.status-badge.preparing {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-badge.delivered {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-badge.cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ==============================
+   MODAL OVERLAY
+============================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.modal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-card h3 {
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ==============================
+   QR BOX
+============================== */
+
+.qr-box {
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.qr-box p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.qr-box img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+/* ==============================
+   SEND OTP BUTTON
+============================== */
+
+.send-otp-btn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.send-otp-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ==============================
+   CASH CHECKBOX
+============================== */
+
+.cash-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.cash-check input {
+  width: 16px;
+  height: 16px;
+}
+
+/* ==============================
+   OTP SECTION
+============================== */
+
+.otp-section {
+  margin-bottom: 20px;
+}
+
+.otp-section label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.otp-section input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.otp-section input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* ==============================
+   MODAL ACTION BUTTONS
+============================== */
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.cancel-btn:hover {
+  background: #d1d5db;
+}
+
+.confirm-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #16a34a;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.confirm-btn:hover {
+  background: #15803d;
+}
+
+/* ==============================
+   PAGINATION
+============================== */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.pagination button:hover {
+  background: #d1d5db;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+  .modal-card {
+    padding: 20px;
+  }
+
+  .orders-table {
+    min-width: 700px;
+  }
+
+  .qr-box img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vendor-orders-page {
+    padding: 15px;
+  }
+
+  .modal-card {
+    padding: 18px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+/* ✅ Sirf table text center */
+.admin-orders table th,
+.admin-orders table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* ✅ USER column ka flex bhi center */
+.admin-orders .user {
+  align-items: center;
+  justify-content: center;
+}
+/* ✅ Action column perfectly center */
+.admin-orders td.action-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ✅ Delivered/Cancelled me dash ko center fix */
+.admin-orders td.action-cell span {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  color: #64748b;
+}
+.admin-orders td {
+  vertical-align: middle;
+}

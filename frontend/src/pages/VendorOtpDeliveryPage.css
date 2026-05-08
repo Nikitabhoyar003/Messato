@@ -1,0 +1,68 @@
+
+
+.otp-table-page {
+  padding: 20px;
+}
+
+.otp-table-page h2 {
+  margin-bottom: 20px;
+}
+
+.otp-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.otp-table th,
+.otp-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  font-size: 14px;
+}
+
+.otp-table th {
+  background: #f1f5fb;
+  font-weight: 600;
+}
+
+.otp-input {
+  width: 80px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.verify-btn {
+  padding: 6px 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status.pending {
+  background: #fff7ed;
+  color: #b45309;
+}
+
+.status.delivered {
+  background: #e6fffa;
+  color: #047857;
+}
+
+.msg {
+  margin-top: 15px;
+  font-weight: 600;
+}

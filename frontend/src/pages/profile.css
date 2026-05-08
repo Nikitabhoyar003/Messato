@@ -1,0 +1,230 @@
+/* =====================
+   WRAPPER
+===================== */
+.profile-wrapper {
+  min-height: 100vh;
+  background: #f4f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+  box-sizing: border-box;
+}
+
+/* =====================
+   PROFILE CARD
+===================== */
+.profile-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 820px;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+/* =====================
+   HEADER
+===================== */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+/* Avatar */
+.avatar-circle {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #4f8cff, #6fb1ff);
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Name */
+.profile-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Location */
+.location {
+  font-size: 14px;
+  color: #777;
+  margin-top: 4px;
+}
+
+/* Edit Button */
+.edit-btn {
+  margin-left: auto;
+  border: none;
+  background: #eef3ff;
+  color: #3b6cff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.edit-btn:hover {
+  background: #dfe8ff;
+}
+
+/* =====================
+   PROFILE GRID
+===================== */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Section titles */
+.profile-grid h4 {
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Labels */
+.profile-grid label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Inputs */
+.profile-grid input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 14px;
+  font-size: 14px;
+  background: #f9fafc;
+  color: #333;
+}
+
+/* =====================
+   LOGOUT LINK (RED)
+===================== */
+.logout-link {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #e53935;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.logout-link:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   LOGOUT MODAL
+===================== */
+.logout-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.logout-modal {
+  background: #ffffff;
+  width: 320px;
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.25s ease;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #888;
+}
+
+/* Modal title */
+.logout-modal h3 {
+  margin: 10px 0 6px;
+  font-size: 18px;
+  color: #222;
+}
+
+/* Modal text */
+.logout-modal p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Confirm logout */
+.confirm-logout {
+  width: 100%;
+  background: #e53935;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirm-logout:hover {
+  background: #d32f2f;
+}
+
+/* =====================
+   ANIMATION
+===================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 700px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    padding: 20px;
+  }
+}

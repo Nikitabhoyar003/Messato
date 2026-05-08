@@ -1,0 +1,217 @@
+/* =========================
+   GLOBAL LAYOUT
+========================= */
+
+.vendor-layout {
+  display: flex;
+  height: 100vh;
+  background: #f4f7fb;
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   LEFT PANEL
+========================= */
+
+.left-panel {
+  width: 360px;
+  background: #ffffff;
+  border-right: 1px solid #e6eaf0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.04);
+}
+
+.left-panel h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.no-orders {
+  text-align: center;
+  padding: 40px 0;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* =========================
+   ORDER CARD
+========================= */
+
+.order-card {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.order-card:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.order-card.active {
+  background: #eef2ff;
+  border: 1px solid #6366f1;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+}
+
+.order-top1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #1e293b;
+}
+
+.price1 {
+  background: #22c55e;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.order-user {
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.order-address {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* =========================
+   MAP PANEL
+========================= */
+
+.map-panel {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/* =========================
+   ETA BOX (Premium Glass UI)
+========================= */
+
+.eta-box {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1e293b;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+  animation: fadeSlide 0.4s ease forwards;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* =========================
+   SCROLLBAR STYLING
+========================= */
+
+.left-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.left-panel::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.left-panel::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .vendor-layout {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
+    height: 40%;
+  }
+
+  .map-panel {
+    height: 60%;
+  }
+}
+.truck-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.truck-img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+.truck-img {
+  transition: transform 0.4s ease;
+}
+.left-panel {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.price-badge {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #ffffff;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.35);
+  display: inline-flex;
+  align-items: center;
+}

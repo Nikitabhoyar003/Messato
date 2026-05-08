@@ -1,0 +1,461 @@
+/* =========================================
+   🌐 MAIN LAYOUT
+========================================= */
+
+.vendor-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.vendor-main {
+  flex: 1;
+  padding: 32px;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   ☁️ SIDEBAR
+========================================= */
+
+.vendor-sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #e0f2fe, #bae6fd);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  transition: 0.3s ease;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.05);
+}
+
+/* LOGO */
+.vendor-logo h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0369a1;
+}
+
+.vendor-logo span {
+  font-size: 13px;
+  color: #075985;
+  font-weight: 600;
+}
+
+/* MENU */
+.vendor-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: #075985;
+  transition: 0.25s ease;
+}
+
+.menu-link svg {
+  font-size: 18px;
+}
+
+.menu-link:hover {
+  background: rgba(2, 132, 199, 0.15);
+  transform: translateX(4px);
+}
+
+.menu-link.active {
+  background: #0284c7;
+  color: white;
+  box-shadow: 0 6px 14px rgba(2, 132, 199, 0.3);
+}
+
+/* BOTTOM */
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.logout-btn {
+  width: 100%;
+  border: none;
+  background: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+  margin-top: 8px;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+}
+
+.logout-btn:hover {
+  background: #ef4444;
+  color: white;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.logout-btn svg {
+  font-size: 18px;
+}
+
+/* =========================================
+   📊 DASHBOARD
+========================================= */
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.dashboard-header p {
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+/* STATS GRID */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.stat-card span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* =========================================
+   🍱 MENU PAGE
+========================================= */
+
+.menu-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* MEAL TABS */
+.meal-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.meal-tabs button {
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.meal-tabs button.active {
+  background: #0284c7;
+  color: white;
+}
+
+/* FOOD GRID */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.food-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+}
+
+.food-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.food-info {
+  padding: 14px;
+}
+
+.food-info h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.food-info span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.food-info p {
+  color: #0284c7;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.food-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px 16px;
+}
+
+.food-actions button {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.food-actions .edit {
+  background: #bbf7d0;
+}
+
+.food-actions .delete {
+  background: #fecaca;
+}
+
+/* =========================================
+   📱 RESPONSIVE
+========================================= */
+
+/* Large Tablet */
+@media (max-width: 1200px) {
+  .food-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .vendor-sidebar {
+    width: 220px;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .vendor-layout {
+    flex-direction: column;
+  }
+
+  .vendor-sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+  }
+
+  .vendor-sidebar.open {
+    left: 0;
+  }
+
+  .vendor-main {
+    padding: 20px;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .vendor-main {
+    padding: 16px;
+  }
+
+  .menu-title {
+    font-size: 20px;
+  }
+
+  .meal-tabs button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .food-card img {
+    height: 150px;
+  }
+}
+/* ===== MAIN LAYOUT ===== */
+.vendor-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* ===== SIDEBAR ===== */
+.vendor-sidebar {
+  width: 260px;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+/* ===== MAIN CONTENT ===== */
+.vendor-main {
+  flex: 1;
+  margin-left: 260px;   /* 👈 IMPORTANT */
+  padding: 32px;
+}
+
+/* ===== REMOVE OLD CONFLICTING CLASS ===== */
+/* DELETE THIS IF EXISTS */
+.vendor-dashboard-layout {
+  all: unset;
+}
+@media (max-width: 768px) {
+  .vendor-sidebar {
+    left: -260px;
+  }
+
+  .vendor-sidebar.open {
+    left: 0;
+  }
+
+  .vendor-main {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
+/* ============================= */
+/* WRAPPER */
+/* ============================= */
+
+.vendor-dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* ============================= */
+/* SIDEBAR */
+/* ============================= */
+
+.vendor-sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+/* ============================= */
+/* MAIN CONTENT */
+/* ============================= */
+
+.vendor-dashboard-content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  min-height: 100vh;
+}
+/* =========================================
+   HIDE NAVBAR LOGO ONLY IN VENDOR PANEL
+========================================= */
+
+.vendor-dashboard-layout .navbar .nav-logo {
+  display: none;
+}
+
+/* Optional: navbar ko center adjust karo */
+.vendor-dashboard-layout .navbar {
+  justify-content: space-between;
+  padding-left: 30px;
+}
+.vendor-dashboard-layout .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 40px;
+}
+
+.vendor-dashboard-layout .navbar .nav-logo {
+  display: none;
+}
+.vendor-sidebar {
+  position: fixed;
+  top: 0;                 /* 👈 top se start */
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  z-index: 2000;          /* 👈 navbar se upar */
+}
+.vendor-dashboard-content {
+  margin-left: 260px;
+  margin-top: 70px;
+
+}
+
+.status-badge {
+  padding: 8px;
+  margin: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-badge.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-badge.incomplete {
+  background: #d1ecf1;
+  color: #0c5460;
+}

@@ -1,0 +1,145 @@
+# <<<<<<< HEAD
+
+# # ===============================
+# # NODE / BACKEND
+# # ===============================
+# node_modules/
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
+
+# # Environment variables
+# .env
+# .env.local
+# .env.development
+# .env.test
+# .env.production
+
+# # ===============================
+# # BUILD / DIST FILES
+# # ===============================
+# dist/
+# build/
+# out/
+
+# # ===============================
+# # FRONTEND (REACT / VITE)
+# # ===============================
+# frontend/node_modules/
+# frontend/dist/
+# frontend/build/
+# frontend/.vite/
+
+# # ===============================
+# # ADMIN PANEL (if exists)
+# # ===============================
+# admin/node_modules/
+# admin/dist/
+# admin/build/
+# admin/public/
+
+# # ===============================
+# # LOG FILES
+# # ===============================
+# logs/
+# *.log
+
+# # ===============================
+# # OS FILES
+# # ===============================
+# .DS_Store
+# Thumbs.db
+
+# # ===============================
+# # EDITOR FILES
+# # ===============================
+# .vscode/
+# .idea/
+# *.swp
+# *.swo
+
+# # =================
+
+# node_modules
+# .env
+# .node_modules
+# package-lock.json
+# package.json
+# # Environment variables
+# .env
+# backend/.env
+
+
+
+<<<<<<< HEAD
+
+# ===============================
+# NODE / BACKEND
+# ===============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# ===============================
+# BUILD / DIST FILES
+# ===============================
+dist/
+build/
+out/
+
+# ===============================
+# FRONTEND (REACT / VITE)
+# ===============================
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+# ===============================
+# ADMIN PANEL (if exists)
+# ===============================
+admin/node_modules/
+admin/dist/
+admin/build/
+admin/public/
+
+# ===============================
+# LOG FILES
+# ===============================
+logs/
+*.log
+
+# ===============================
+# OS FILES
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# EDITOR FILES
+# ===============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =================
+
+node_modules
+.env
+
+# .node_modules          # duplicate / not needed
+# package-lock.json      # comment if you want lock file in github
+# package.json           # NEVER ignore package.json normally
+
+# Environment variables
+.env
+backend/.env

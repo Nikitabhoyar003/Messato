@@ -173,3 +173,48 @@
     padding-top: 14px;
   }
 }
+/* ---------- PROFILE ICON ---------- */
+
+.profile-icon {
+  position: relative;
+  margin-left: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  background: white;
+  min-width: 140px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  display: none;
+  z-index: 3000;
+}
+
+.profile-icon:hover .profile-dropdown {
+  display: block;
+}
+
+.profile-dropdown p {
+  padding: 10px 14px;
+  margin: 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.profile-dropdown p:hover {
+  background: #f5f5f5;
+}
+
+.cart-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 🔥 MUST BE VERY HIGH */
+}

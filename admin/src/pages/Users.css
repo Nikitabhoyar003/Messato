@@ -1,0 +1,599 @@
+/* ================= PAGE ================= */
+.users-page {
+  padding: 24px;
+  background: #f6f7fb;
+  min-height: 100vh;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* ================= STATS CARDS ================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 18px 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+
+.stat-card h4 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.stat-card span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.stat-card.green { border-left: 5px solid #22c55e; }
+.stat-card.red   { border-left: 5px solid #ef4444; }
+.stat-card.blue  { border-left: 5px solid #3b82f6; }
+
+/* ================= SEARCH ================= */
+.user-toolbar {
+  margin-bottom: 18px;
+}
+
+.user-toolbar input {
+  width: 260px;
+  max-width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  transition: border .2s ease, box-shadow .2s ease;
+}
+
+.user-toolbar input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+}
+
+/* ================= USERS LIST ================= */
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.user-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.12);
+}
+
+.user-left h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.user-left span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ================= USER META SMALL BOXES ================= */
+.user-meta {
+  display: flex;
+  gap: 20px;
+}
+
+.user-meta > div {
+  
+ 
+  border-radius: 10px;
+  min-width: 90px;
+  text-align: center;
+}
+
+.user-meta label {
+  display: block;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.user-meta span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ================= STATUS ================= */
+.status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.active {
+  background: #e7f8ef;
+  color: #16a34a;
+}
+
+.status.blocked {
+  background: #fdecea;
+  color: #dc2626;
+}
+
+/* ================= VIEW BUTTON ================= */
+.view-link {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.view-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= PAGINATION ================= */
+.pagination {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.pagination button:disabled {
+  background: #c7c7c7;
+  cursor: not-allowed;
+}
+
+/* ================= DRAWER ================= */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+.drawer {
+  width: 340px;
+  background: #fff;
+  padding: 24px;
+}
+
+.blocked-reason {
+  background: #fdecea;
+  color: #991b1b;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+/* ================= BLOCK MODAL ================= */
+.block-modal {
+  background: #fff;
+  padding: 24px;
+  width: 320px;
+  margin: auto;
+  border-radius: 14px;
+}
+
+textarea {
+  width: 100%;
+  height: 90px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+}
+
+.danger {
+  margin-top: 12px;
+  background: #dc2626;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+.success {
+  background: #16a34a;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .user-meta {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .user-meta {
+    flex-wrap: wrap;
+  }
+
+  .drawer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.users-page {
+  padding: 24px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+/* ===== STATS ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+.stat-card h4 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.stat-card span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.green { border-left: 4px solid #22c55e; }
+.red   { border-left: 4px solid #ef4444; }
+.blue  { border-left: 4px solid #3b82f6; }
+
+/* ===== SEARCH ===== */
+.user-toolbar input {
+  width: 260px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 18px;
+}
+
+/* ===== USERS ===== */
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.user-card {
+  background: #fff;
+  padding: 14px 18px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+.user-left span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* SMALL INFO BOXES */
+.user-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.meta-box {
+  background: #f9fafb;
+  padding: 6px 10px;
+  border-radius: 10px;
+  min-width: 90px;
+  text-align: center;
+}
+
+.meta-box label {
+  display: block;
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.meta-box span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.active {
+  color: #16a34a;
+}
+
+.status.blocked {
+  color: #dc2626;
+}
+
+/* BUTTON */
+.view-link {
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* PAGINATION */
+.pagination {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+}
+
+.pagination button:disabled {
+  background: #c7c7c7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .user-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== USER CARD ROW ===== */
+.user-card {
+  background: #ffffff;
+  padding: 18px 22px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+}
+
+/* LEFT USER INFO */
+.user-left {
+  min-width: 220px;
+}
+
+.user-left strong {
+  display: block;
+  font-size: 16px;
+  color: #111827;
+}
+
+.user-left span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ===== SMALL INFO BOXES ===== */
+.user-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap; /* 🔑 keeps boxes small */
+}
+
+.meta-box {
+  background: #f9fafb;
+  padding: 8px 14px;
+  border-radius: 14px;
+  min-width: 110px;        /* 🔑 equal small boxes */
+  text-align: center;
+}
+
+.meta-box label {
+  display: block;
+  font-size: 11px;
+  color: #9ca3af;
+  margin-bottom: 2px;
+}
+
+.meta-box span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* STATUS BADGE */
+.status {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status.active {
+  background: #e7f8ef;
+  color: #16a34a;
+}
+
+.status.blocked {
+  background: #fdecea;
+  color: #dc2626;
+}
+
+/* RIGHT ACTION */
+.view-link {
+  margin-left: auto;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* ===== RESPONSIVE FIX ===== */
+@media (max-width: 1024px) {
+  .user-meta {
+    flex-wrap: wrap;
+  }
+
+  .meta-box {
+    min-width: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .view-link {
+    align-self: flex-end;
+  }
+}
+
+.users-page {
+  padding-top: 12px;   /* pehle zyada tha */
+}
+
+.users-page h2 {
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  margin-bottom: 12px;
+}
+
+
+.user-meta {
+  display: flex;
+  align-items: center;
+  gap: 36px;          /* spacing between items */
+  flex-wrap: wrap;
+}
+
+/* EACH ITEM (NO BOX LOOK) */
+.meta-box {
+  background: transparent;   /* ❌ no background */
+  border: none;              /* ❌ no border */
+  padding: 0;                /* ❌ no padding */
+  min-width: auto;
+  text-align: left;
+}
+
+/* LABEL */
+.meta-box label {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 2px;
+  display: block;
+}
+
+/* VALUE */
+.meta-box span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+
+.status.active {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.status.blocked {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.user-card {
+  padding: 16px 22px;   /* thoda kam height */
+  border-radius: 16px;
+}
+@media (max-width: 768px) {
+  .user-meta {
+    gap: 16px;
+  }
+}
+
+

@@ -1,0 +1,113 @@
+/* ================= SECTION ================= */
+.inspiration-section {
+  width: 100%;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
+
+/* ================= TITLE ================= */
+.inspiration-section h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #0f172a;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+/* ================= ROW ================= */
+.inspiration-row {
+  display: flex;
+  gap: clamp(80px, 9vw, 120px);
+  overflow:hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding-bottom: 16px;
+}
+
+/* Hide scrollbar */
+.inspiration-row::-webkit-scrollbar {
+  display: none;
+}
+.inspiration-row {
+  scrollbar-width: none;
+}
+
+/* ================= ITEM ================= */
+.inspiration-item {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+/* ================= IMAGE ================= */
+.inspiration-item img {
+  width: clamp(78px, 21vw, 150px);   /* 🔥 ALWAYS >= 3 ON MOBILE */
+  height: clamp(78px, 21vw, 150px);
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.inspiration-item img:hover {
+  transform: scale(1.06);
+}
+
+/* ================= LABEL ================= */
+.inspiration-item p {
+  margin-top: 8px;
+  font-size: clamp(11px, 3vw, 15px);
+  font-weight: 500;
+  color: #1e293b;
+}
+
+/* ================= LARGE DESKTOP ================= */
+@media (min-width: 1440px) {
+  .inspiration-row {
+    gap: 80px;
+  }
+}
+
+/* ================= LAPTOP ================= */
+@media (max-width: 1200px) {
+  .inspiration-section {
+    padding: 32px 40px;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+  .inspiration-section {
+    padding: 28px 24px;
+  }
+
+  .inspiration-section h2 {
+    font-size: 22px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .inspiration-section {
+    padding: 24px 16px;
+  }
+
+  .inspiration-section h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 360px) {
+  .inspiration-item img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .inspiration-item p {
+    font-size: 11px;
+  }
+}
